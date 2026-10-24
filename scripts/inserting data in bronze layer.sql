@@ -1,4 +1,24 @@
+/*
+===============================
+stored procedure : load bronze layer ( source -> bronze)
+===============================
+script purpose :
+this stored procedure loads data into the 'bronze ' schema from external csv filles 
+it performs the following action :
+-- truncates the bronze tables before loading data .
+-- uses the "Bluck insert " command to load data from csv files to bronze tables
 
+Parameters:
+none.
+this stored procedure does not accept any parameters ro return any values
+
+
+Usage examble 
+exec bronze.load_bronze;
+
+===============================
+
+*/
 create or alter procedure bronze.load_bronze as 
 begin 
   declare @start_time datetime , @end_time  datetime,@start_time_of_layer datetime ,@end_time_of_layer datetime;
