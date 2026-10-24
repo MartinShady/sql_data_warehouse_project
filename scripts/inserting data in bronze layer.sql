@@ -1,7 +1,7 @@
 
 create or alter procedure bronze.load_bronze as 
 begin 
-  declare @start_time datetime , @end_time  datetime;
+  declare @start_time datetime , @end_time  datetime,@start_time_of_layer datetime ,@end_time_of_layer datetime;
   begin try 
         -- crm table inserting 
         print('==========================')
@@ -16,6 +16,7 @@ begin
         -------------------------------------------------
         -- the first duration to  inserting data in table
         -------------------------------------------------
+        set @start_time_of_layer=getdate()
         set @start_time = getdate();
 
         if object_id('bronze.crm_cust_info','U') is not null
@@ -121,9 +122,13 @@ begin
             tablock
         )
         set @end_time=GETDATE()
+        set @end_time_of_layer=GETDATE()
         print'total time of loadin erp_PX_CAT_G1V2 table is '+ cast(datediff(MILLISECOND,@start_time,@end_time)as nvarchar)+ ' ms'
 
 
+        print '============================================'
+        print'--------======== total time of insertin data in the tables equal '+cast(datediff(MILLISECOND,@start_time_of_layer,@end_time_of_layer)as nvarchar) 
+        print '============================================'
   end try 
      begin catch 
          print '========================='
