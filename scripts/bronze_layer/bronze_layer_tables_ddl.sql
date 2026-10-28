@@ -32,8 +32,8 @@ prd_key nvarchar(50),
 prd_name nvarchar(50),
 prd_cost int,
 prd_line nvarchar(50),
-prd_start_dt date ,
-prd_end_dt date
+ prd_start_dt DATETIME,
+ prd_end_dt   DATETIME
 )
 
 if object_id('bronze.crm_sales_details','U') is not null 
