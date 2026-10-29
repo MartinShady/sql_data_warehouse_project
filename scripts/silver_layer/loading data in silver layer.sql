@@ -1,3 +1,24 @@
+/*
+===============================
+stored procedure : load Silver layer ( Bronze -> Silver)
+===============================
+script purpose :
+this stored procedure loads data into the 'Silver ' schema from bronze tables
+it performs the following action :
+-- truncates the Silver tables before loading data .
+-- uses the " CTAS " to load data from  bronze tables to silver tables
+
+Parameters:
+none.
+this stored procedure does not accept any parameters ro return any values
+
+
+Usage examble 
+exec bronze.load_bronze;
+
+===============================
+
+*/
 create or alter procedure silver.load_silver as
 begin
      declare @start_time datetime , @end_time  datetime,@start_total_time datetime ,@end_total_time datetime;
