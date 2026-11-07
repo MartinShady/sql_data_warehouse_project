@@ -12,12 +12,11 @@ It integrates data from two sources (CRM and ERP) and organizes it into differen
 
 ## Project Architecture
 
-The project follows the Medallion Architecture:
-
+The project follows the Medallion Architecture::
+<img width="3090" height="1830" alt="image" src="https://github.com/user-attachments/assets/550b2290-5605-4879-a23c-19ff5e763b16" />
 - **Bronze Layer:** Stores raw data from source files.
 - **Silver Layer:** Cleans and transforms the data.
 - **Gold Layer:** Organizes the data into business-ready tables.
-- <img width="3090" height="1830" alt="image" src="https://github.com/user-attachments/assets/550b2290-5605-4879-a23c-19ff5e763b16" />
 
 
 ## Technologies Used
